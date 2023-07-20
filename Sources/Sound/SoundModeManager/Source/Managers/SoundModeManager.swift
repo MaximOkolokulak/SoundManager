@@ -12,8 +12,10 @@ import func AVFoundation.AudioServicesDisposeSystemSoundID
 import func AVFoundation.AudioServicesPlaySystemSoundWithCompletion
 import class UIKit.DispatchQueue
 import class UIKit.UIApplication
+import ObjectiveC
+import Foundation
 
-public class SoundModeManager: NSObject {
+public class SoundModeManager {
     
     // MARK: - Public Properties
     
@@ -120,7 +122,7 @@ public class SoundModeManager: NSObject {
         self.soundDuration = soundAsset.duration.seconds
         self.soundUpdatingInterval = max(soundUpdatingInterval, 1)
         self.notificationCenter = notificationCenter
-        super.init()
+//        super.init()
         
         // Observe background/foreground notifications.
         didEnterBackgroundNotificationToken = notificationCenter.addObserver(
